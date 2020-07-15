@@ -2,7 +2,7 @@
     "name": "wwwroth/contactspace-sdk",
     "require": {
         "guzzlehttp/guzzle": "^6.0",
-        "nesbot/carbon": "^2.3"
+        "nesbot/carbon": "^2.0"
     },
     "authors": [
         {
