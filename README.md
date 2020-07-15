@@ -5,7 +5,7 @@
  ### Example Usage
  
  ```php
- $client = new \wwwroth\contactSPACE_SDK\Client([
+ $client = new \wwwroth\contactSPACE\Client([
      'api_key' => '<APIKEY>'
  ]);
  

@@ -1,5 +1,11 @@
 {
     "name": "wwwroth/contactspace-sdk",
+    "description": "A quick, simple PHP SDK for interfacing with contactSPACE's JSON API.",
+    "keywords": [
+        "contactSPACE",
+        "4Flex"
+    ],
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "^6.0",
         "nesbot/carbon": "^2.0"
@@ -12,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "contactSPACE\\": "src/"
+            "wwwroth\\contactspace-sdk\\": "src/"
         }
     }
 }
