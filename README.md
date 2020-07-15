@@ -1,11 +1,11 @@
- # wwwroth/contactSPACE
+ # wwwroth/contactspace
  
  A quick, simple PHP SDK for interfacing with contactSPACE's API. Only JSON ?outputtype is supported.
  
  ### Example Usage
  
  ```php
- $client = new \wwwroth\contactSPACE\Client([
+ $client = new \wwwroth\contactspace\Client([
      'api_key' => '<APIKEY>'
  ]);
  
