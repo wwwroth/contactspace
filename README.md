@@ -2,6 +2,12 @@
  
  A quick, simple PHP SDK for interfacing with contactSPACE's API. Only JSON ?outputtype is supported.
  
+ ### Installing
+ 
+```bash
+composer require wwwroth/contactspace-sdk:1.0
+```
+ 
  ### Example Usage
  
  ```php
