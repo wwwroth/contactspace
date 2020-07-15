@@ -1,5 +1,5 @@
 {
-    "name": "wwwroth/contactspace-sdk",
+    "name": "wwwroth/contactSPACE",
     "description": "A quick, simple PHP SDK for interfacing with contactSPACE's JSON API.",
     "keywords": [
         "contactSPACE",
@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "wwwroth\\contactspace-sdk\\": "src/"
+            "wwwroth\\contactSPACE\\": "src/"
         }
     }
 }
