@@ -1,6 +1,6 @@
 <?php
 
-namespace wwwroth\contactSPACE;
+namespace wwwroth\contactspace;
 
 use GuzzleHttp\Client as GuzzleClient;
 
