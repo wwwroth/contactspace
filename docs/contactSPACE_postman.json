@@ -1,0 +1,1477 @@
+{
+	"info": {
+		"_postman_id": "ecb08e1d-e78f-4568-9e79-22be313e6eeb",
+		"name": "contactSPACE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Production",
+			"item": [
+				{
+					"name": "2.1 CreateDataSet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=CreateDataSet&initiativeid=5914&datasetname=testdata&active=1&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "CreateDataSet"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5914"
+								},
+								{
+									"key": "datasetname",
+									"value": "testdata"
+								},
+								{
+									"key": "active",
+									"value": "1"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.1 Add a Dataset\n\n- InitiativeID is the ID of the Initiative. You can get this ID by hovering over the Initiative Name in the Initiatives screen.\n- <Name of DataSet> is the name of the dataset as it will be seen in the system.\n- Active is whether the data set is turned on or off. Values are 1 for on and 0 for off. If on, the records will be dialled immediately. If off, the administrator will need to turn the dataset on in the admin interface.\n- \"###\" is a numeric BIGINT value representing the ID of the dataset in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 InsertRecord",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=UpdateRecord&module=data&initiativeid=<ID of Initiative>&recordid=<ID of Record>&jsondata=",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "UpdateRecord"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "<ID of Initiative>"
+								},
+								{
+									"key": "recordid",
+									"value": "<ID of Record>"
+								},
+								{
+									"key": "jsondata",
+									"value": ""
+								}
+							]
+						},
+						"description": "## 2.2 Insert Record into a Data Set\n\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <fieldname#> tags should be set to the name of the field in the Initiative.\n- You can find the field names by looking in the field manager for the specific Initiative.\n- The 'Field Value #' is the value you are inserting into the field.\n- Field Names are case sensitive.\n- Field values must be a valid value for that field type or the insert will fail."
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 UpdateRecord",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=UpdateRecord&module=data&initiativeid=<ID of Initiative>&recordid=<ID of Record>&jsondata=",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "UpdateRecord"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "<ID of Initiative>"
+								},
+								{
+									"key": "recordid",
+									"value": "<ID of Record>"
+								},
+								{
+									"key": "jsondata",
+									"value": ""
+								}
+							]
+						},
+						"description": "## 2.3 Updating a Record\n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of Record> is the contactSPACE ID for that record, unique to the Initiative only.\n- <fieldname#> tags should be set to the name of the field in the Initiative.\n- You can find the field names by looking in the field manager for the specific Initiative.\n- The 'Field Value #' is the value you are inserting into the field.\n- The returned <message> tag will contain ‘Success’ if the update was successful and an error message if it was not."
+					},
+					"response": []
+				},
+				{
+					"name": "2.4 SetValue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=SetValue&module=data&callid=11218&outputtype=json&modulefieldupdate=postcode='3000'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "SetValue"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "callid",
+									"value": "11218"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								},
+								{
+									"key": "modulefieldupdate",
+									"value": "postcode='3000'"
+								}
+							]
+						},
+						"description": "## 2.4 Setting a Single Field Value\n\n- Callid should be the call ID of the call made.\n- All field update values must be encapsulated in single quotes."
+					},
+					"response": []
+				},
+				{
+					"name": "2.5(A) GetData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetDataWithAgent&module=data&moduleid=5916&fromdate=2020-06-24&todate=2020-06-24&outputtype=xml",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetDataWithAgent"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "moduleid",
+									"value": "5916"
+								},
+								{
+									"key": "fromdate",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "todate",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "outputtype",
+									"value": "xml"
+								}
+							]
+						},
+						"description": "## 2.5 Get Data from the System – [GetData] & [GetDataWithAgent]\n\n- ModuleID should be set to the ID of the initiative.\n- FromDate must be in the format ‘YYYY-MM-DD’.\n- ToDate must be in the format ‘YYYY-MM-DD’.\n- Note: Times within the dates are not accepted."
+					},
+					"response": []
+				},
+				{
+					"name": "2.5(B) GetDataWithAgent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetDataWithAgent&module=data&moduleid=5916&fromdate=2020-06-24&todate=2020-06-24&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetDataWithAgent"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "moduleid",
+									"value": "5916"
+								},
+								{
+									"key": "fromdate",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "todate",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.5 Get Data from the System\n\n- ModuleID should be set to the ID of the initiative.\n- FromDate must be in the format ‘YYYY-MM-DD’.\n- ToDate must be in the format ‘YYYY-MM-DD’.\n- Note: Times within the dates are not accepted."
+					},
+					"response": []
+				},
+				{
+					"name": "2.6 GetRecord",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetRecord&module=data&callid=11221&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetRecord"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "callid",
+									"value": "11221"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.6 Get Single Record from the System\n\n- CallID should be set to the ID of the call made."
+					},
+					"response": []
+				},
+				{
+					"name": "2.7 GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?outputtype=json&apikey=<API_KEY>&function=GetUsers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "outputtype",
+									"value": "json"
+								},
+								{
+									"key": "apikey",
+									"value": "<API_KEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetUsers"
+								}
+							]
+						},
+						"description": "## 2.7 Get Users"
+					},
+					"response": []
+				},
+				{
+					"name": "2.8 GetAgentStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_KEY>&function=GetAgentStatus&userid=<USER_ID>&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_KEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetAgentStatus"
+								},
+								{
+									"key": "userid",
+									"value": "<USER_ID>"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.8 Get User Status\n\n- <USER_ID> should be ID of the user."
+					},
+					"response": []
+				},
+				{
+					"name": "2.9 InsertNextRecord",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=InsertNextRecord&datasetid=<ID of DataSet>&userid=<USER ID>&jsondata={\"fieldname1\":\"Field Value 1\",\"fieldname2\":\"Field Value 2\",\"fieldname3\":\"Field Value 3\",\"fieldname4\":\"Field Value 4\"}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "InsertNextRecord"
+								},
+								{
+									"key": "datasetid",
+									"value": "<ID of DataSet>"
+								},
+								{
+									"key": "userid",
+									"value": "<USER ID>"
+								},
+								{
+									"key": "jsondata",
+									"value": "{\"fieldname1\":\"Field Value 1\",\"fieldname2\":\"Field Value 2\",\"fieldname3\":\"Field Value 3\",\"fieldname4\":\"Field Value 4\"}"
+								}
+							]
+						},
+						"description": "## 2.9 Insert Next Record for User – [InsertNextRecord]\n\n- <ID of DataSet> is the ID of the dataset you created with\n- <USER_ID> should be ID of the user.\n- <fieldname#> tags should be set to the name of the field in the Initiative.\n- You can find the field names by looking in the field manager for the specific Initiative.\n- The 'Field Value #' is the value you are inserting into the field.\n- Field Names are case sensitive.\n- Field values must be a valid value for that field type or the insert will fail."
+					},
+					"response": []
+				},
+				{
+					"name": "2.10 InsertRecordWithCallback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=InsertNextRecord&module=data&datasetid=<ID of DataSet>&userid=<USER ID>&jsondata={\"fieldname1\":\"Field Value 1\",\"fieldname2\":\"Field Value 2\",\"fieldname3\":\"Field Value 3\",\"fieldname4\":\"Field Value 4\"}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "InsertNextRecord"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "datasetid",
+									"value": "<ID of DataSet>"
+								},
+								{
+									"key": "userid",
+									"value": "<USER ID>"
+								},
+								{
+									"key": "jsondata",
+									"value": "{\"fieldname1\":\"Field Value 1\",\"fieldname2\":\"Field Value 2\",\"fieldname3\":\"Field Value 3\",\"fieldname4\":\"Field Value 4\"}"
+								}
+							]
+						},
+						"description": "## 2.10 Insert Record with the Callback date and time – [InsertRecordWithCallback]\n\n- <ID of DataSet> is the ID of the dataset you created with\n- <USER_ID> should be ID of the user.\n- <fieldname#> tags should be set to the name of the field in the Initiative.\n- You can find the field names by looking in the field manager for the specific Initiative.\n- The 'Field Value #' is the value you are inserting into the field.\n- Field Names are case sensitive.\n- Field values must be a valid value for that field type or the insert will fail."
+					},
+					"response": []
+				},
+				{
+					"name": "2.11 GetRecording",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_KEY>&function=GetRecording&callid=<CALL_ID>&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_KEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetRecording"
+								},
+								{
+									"key": "callid",
+									"value": "<CALL_ID>"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.11 Get Recording – [GetRecording]\n\n- CallID should be set to the ID of the call made."
+					},
+					"response": []
+				},
+				{
+					"name": "2.13 Search (w/ FieldName)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=SearchRecordJson&module=data&initiativeid=5916&jsondata={\"FirstName\":\"Joshua\",\"Surname\":\"Test\"}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "SearchRecordJson"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "jsondata",
+									"value": "{\"FirstName\":\"Joshua\",\"Surname\":\"Test\"}"
+								}
+							]
+						},
+						"description": "## 2.13 Search Record – [SearchRecord]\n\nSearches Records in an Initiative and returns the initiative data. Optionally the dataset ID and field values can be provided in the request to filter the initiative data that is being returned. \n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <emailaddress> field is the email address of the customer."
+					},
+					"response": []
+				},
+				{
+					"name": "2.13 Search (w/ Initiative ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=SearchRecordJson&module=data&initiativeid=5916",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "SearchRecordJson"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								}
+							]
+						},
+						"description": "## 2.13 Search Record – [SearchRecord]\n\nSearches Records in an Initiative and returns the initiative data. Optionally the dataset ID and field values can be provided in the request to filter the initiative data that is being returned. \n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <emailaddress> field is the email address of the customer."
+					},
+					"response": []
+				},
+				{
+					"name": "2.13 Search (w/ DataSet ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_key>&function=SearchRecordJson&module=data&datasetid=445",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_key>"
+								},
+								{
+									"key": "function",
+									"value": "SearchRecordJson"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "datasetid",
+									"value": "445"
+								}
+							]
+						},
+						"description": "## 2.13 Search Record – [SearchRecord]\n\nSearches Records in an Initiative and returns the initiative data. Optionally the dataset ID and field values can be provided in the request to filter the initiative data that is being returned. \n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <emailaddress> field is the email address of the customer."
+					},
+					"response": []
+				},
+				{
+					"name": "2.13 Search (w/ Initiative & DataSet ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=SearchRecordJson&module=data&initiativeid=5916&datasetid=445",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "SearchRecordJson"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "datasetid",
+									"value": "445"
+								}
+							]
+						},
+						"description": "## 2.13 Search Record – [SearchRecord]\n\nSearches Records in an Initiative and returns the initiative data. Optionally the dataset ID and field values can be provided in the request to filter the initiative data that is being returned. \n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <emailaddress> field is the email address of the customer."
+					},
+					"response": []
+				},
+				{
+					"name": "2.13 Search (w/ Initiative ID & Email)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=SearchRecordJson&module=data&initiativeid=5916&datasetid=445",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "SearchRecordJson"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "datasetid",
+									"value": "445"
+								}
+							]
+						},
+						"description": "## 2.13 Search Record – [SearchRecord]\n\nSearches Records in an Initiative and returns the initiative data. Optionally the dataset ID and field values can be provided in the request to filter the initiative data that is being returned. \n\n- <ID of Initiative> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <ID of DataSet> is the ID of the dataset you created with CreateDataSet.\n- <emailaddress> field is the email address of the customer."
+					},
+					"response": []
+				},
+				{
+					"name": "2.14 GetOutcome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_KEY>&function=GetOutcome&module=data&initiati veid=<Initiative ID>&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_KEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetOutcome"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiati veid",
+									"value": "<Initiative ID>"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.14 Get Outcome – [GetOutcome]\n\nRetrieves a list of outcomes names and IDs used in a specified initiative."
+					},
+					"response": []
+				},
+				{
+					"name": "2.15 UpdateOutcome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=UpdateOutcome&module=data&initiativeid=5916&recordid=7&outcomeid=3815&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "UpdateOutcome"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "recordid",
+									"value": "7"
+								},
+								{
+									"key": "outcomeid",
+									"value": "3815"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.15 Update Outcome – [UpdateOutcome]\n\nUpdates and outcome for a record in an initiative.\n\n- <InitiativeId> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <RecordID> is the contactSPACE ID for that record, unique to the Initiative only.\n- <OutcomeId> is the ID of the outcome, unique to the Initiative only."
+					},
+					"response": []
+				},
+				{
+					"name": "2.16 GetCLIs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetCLIs&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetCLIs"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.16 Get a List of CLI Numbers Available – [GetCLIs]\n\nThis function provides a list of available Caller IDs and their IDs.  These IDs can be used to update the caller ID of an initiative through the UpdateCLI function."
+					},
+					"response": []
+				},
+				{
+					"name": "2.17 UpdateCLI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_key>&function=UpdateCLI&initiativeid=<initiativeid>&cliid=<CLI_ID>&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_key>"
+								},
+								{
+									"key": "function",
+									"value": "UpdateCLI"
+								},
+								{
+									"key": "initiativeid",
+									"value": "<initiativeid>"
+								},
+								{
+									"key": "cliid",
+									"value": "<CLI_ID>"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.17 Update an Initiative CLI – [UpdateCLI]\n\nThis function allows the caller ID for a specific initiative to be set using the ID specified through the GetCLIs function.\n\n- <InitiativeId> is the ID of the Initiative which you can get from hovering over the Initiative name in the Initiatives screen.\n- <CLI_ID> is caller ID of the CLI. You can find the CLI ID from Inbound -> Incoming Numbers."
+					},
+					"response": []
+				},
+				{
+					"name": "2.18 AgentStatusHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<API_KEY>&function=AgentStatusHistory&userid=<USER_ID>&statusid=<STATUS_ID>&date=<DATE>&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<API_KEY>"
+								},
+								{
+									"key": "function",
+									"value": "AgentStatusHistory"
+								},
+								{
+									"key": "userid",
+									"value": "<USER_ID>"
+								},
+								{
+									"key": "statusid",
+									"value": "<STATUS_ID>"
+								},
+								{
+									"key": "date",
+									"value": "<DATE>"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 2.18 Get Agent Status History - [AgentStatusHistory]\n\nThis function allows the caller ID for a specific initiative to be set using the ID specified through the GetCLIs function.\n\n- <USER_ID> is unique ID of the user\n- <STATUS_ID> is the pause status ID, you can find the information under Settings -> Pause Reasons\n- <DATE> must be in the format ‘YYYY-MM-DD’."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Beta",
+			"item": [
+				{
+					"name": "3.1 AgentStatusHistoryNew",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=AgentStatusHistoryNew&userid=18&statusid=2&date=2020-06-25&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "AgentStatusHistoryNew"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "statusid",
+									"value": "2"
+								},
+								{
+									"key": "date",
+									"value": "2020-06-25"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.1 Get Agent Status History NEW - [AgentStatusHistoryNew]\n\n- <USER_ID> is unique ID of the user\n- <STATUS_ID> is the pause status ID, you can find the information under Settings -> Pause Reasons\n- <DATE> must be in the format ‘YYYY-MM-DD’.\n\n- <USER_ID> is unique ID of the user\n- <STATUS_ID> is the pause status ID, you can find the information under Settings -> Pause Reasons\n- <DATE> must be in the format ‘YYYY-MM-DD’."
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 AgentFirstLastActivity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&userid=18&outputtype=json&function=AgentFirstLastActivity&date=2020-06-24",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								},
+								{
+									"key": "function",
+									"value": "AgentFirstLastActivity"
+								},
+								{
+									"key": "date",
+									"value": "2020-06-24"
+								}
+							]
+						},
+						"description": "## 3.2 Get Agent First & Last Activity - [AgentFirstLastActivity]\n\n- <USER_ID> is unique ID of the user\n- For date/time fields specify it in the format: YYYY-mm-dd 00:00:00"
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 GetCallIDs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetCallIDs&fromdate=2020-06-24&todate=2020-06-25&initiativeid=5916&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetCallIDs"
+								},
+								{
+									"key": "fromdate",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "todate",
+									"value": "2020-06-25"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.2 Get Agent First & Last Activity - [AgentFirstLastActivity]\n\n- <USER_ID> is unique ID of the user\n- For date/time fields specify it in the format: YYYY-mm-dd 00:00:00"
+					},
+					"response": []
+				},
+				{
+					"name": "3.4 GetLastCall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetLastCall&module=data&initiativeid=5916&recordid=8&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetLastCall"
+								},
+								{
+									"key": "module",
+									"value": "data"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "recordid",
+									"value": "8"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.4 Get Last Call Outcomes - [GetLastCall]"
+					},
+					"response": []
+				},
+				{
+					"name": "3.5 GetSkillIDs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=GetSkillIDs&initiativeid=5916&userid=18&skillname=DaisytestAPINew&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "GetSkillIDs"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "skillname",
+									"value": "DaisytestAPINew"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.5 Get Skills ID - [GetSkillIDs]\n\n- <initiativeID> is the ID of the initiative\n- <USER_ID> is the unique user ID\n- <SKILLNAME> is the name of the skill\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.6 GetSkillsInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?outputtype=json&apikey=%3cAPIKEY%3e&function=GetSkillsInfo&skillid=392",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "outputtype",
+									"value": "json"
+								},
+								{
+									"key": "apikey",
+									"value": "%3cAPIKEY%3e"
+								},
+								{
+									"key": "function",
+									"value": "GetSkillsInfo"
+								},
+								{
+									"key": "skillid",
+									"value": "392"
+								}
+							]
+						},
+						"description": "## 3.6 Get Skills Information - [GetSkillsInfo]\n\n- <SKILLID> is the unique ID of the Skill. Place a comma to separate each skill ID if you want to retrieve multiple skills information.\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.7 AddEditInitiativeToSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=AddEditInitiativeToSkill&skillid=394&initiativeid=5916&weight=1.0&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "AddEditInitiativeToSkill"
+								},
+								{
+									"key": "skillid",
+									"value": "394"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "weight",
+									"value": "1.0"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.7 Add or Edit Initiative to a Skill - [AddEditInitiativeToSkill]\n\n- <SKILLID> is the unique ID of the Skill.\n- <InitiativeID> is the ID of the initiative\nWeight value between 0.0 to 1.0. Filter ID is for Agent Filter, it could be null.\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.8 RemoveInitiativeFromSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&skillid=394&initiativeid=5916&outputtype=json&function=RemoveInitiativeFromSkill",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "skillid",
+									"value": "394"
+								},
+								{
+									"key": "initiativeid",
+									"value": "5916"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								},
+								{
+									"key": "function",
+									"value": "RemoveInitiativeFromSkill"
+								}
+							]
+						},
+						"description": "## 3.8 Remove Initiative from a Skill - [RemoveInitiativeFromSkill]\n\n- <SKILLID> is the unique ID of the Skill.\n- <InitiativeID> is the ID of the initiative\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.9 AddEditUserToSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=AddEditUserToSkill&skillid=394&userid=18&skilllevel=10&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "AddEditUserToSkill"
+								},
+								{
+									"key": "skillid",
+									"value": "394"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "skilllevel",
+									"value": "10"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.9 Add or Edit User to a Skill - [AddEditUserToSkill]\n\n- <SKILLID> is the unique ID of the Skill.\n- <UserID> is the ID of the initiative\n- Skill Level between 1 to 10.\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.11 AgentStatusTime",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=AgentStatusTime&userid=18&date=2020-06-24&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "AgentStatusTime"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "date",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.11 Get Agent Status Time - [AgentStatusTime]\n\n- <USERID> is the unique ID of the user.\n- <DATE> must be in the format ‘YYYY-MM-DD’.\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				},
+				{
+					"name": "3.12 LiveBIFeed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.contactspace.com/?apikey=<APIKEY>&function=AgentStatusTime&userid=18&date=2020-06-24&outputtype=json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"contactspace",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "<APIKEY>"
+								},
+								{
+									"key": "function",
+									"value": "AgentStatusTime"
+								},
+								{
+									"key": "userid",
+									"value": "18"
+								},
+								{
+									"key": "date",
+									"value": "2020-06-24"
+								},
+								{
+									"key": "outputtype",
+									"value": "json"
+								}
+							]
+						},
+						"description": "## 3.11 Get Agent Status Time - [AgentStatusTime]\n\n- <USERID> is the unique ID of the user.\n- <DATE> must be in the format ‘YYYY-MM-DD’.\n- <OUTPUTTYPE> can be json or xml (default)."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
