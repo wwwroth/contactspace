@@ -1,4 +1,4 @@
- # wwwroth/contactSPACE-SDK
+ # wwwroth/contactSPACE
  
  A quick, simple PHP SDK for interfacing with contactSPACE's API. Only JSON ?outputtype is supported.
  
