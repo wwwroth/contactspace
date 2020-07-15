@@ -5,7 +5,7 @@
  ### Installing
  
 ```bash
-composer require wwwroth/contactspace-sdk:1.0
+composer require wwwroth/contactspace-sdk
 ```
  
  ### Example Usage
