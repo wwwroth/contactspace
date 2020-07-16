@@ -69,7 +69,7 @@ class Client
             'query' => $this->buildQuery($method, $args[0] ?? null)
         ]);
 
-        return $request->getBody()->getContents();
+        return json_decode($request->getBody()->getContents());
     }
 
     /**
