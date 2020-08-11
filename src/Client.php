@@ -43,7 +43,7 @@ class Client
      * @return mixed
      * @throws \Exception
      */
-    public function __call(string $function, array $parameters)
+    public function __call(string $function, array $parameters, string $method = 'get')
     {
         $this->config = (array) require(
             __DIR__ . '/config/contactspace.php'
@@ -56,6 +56,7 @@ class Client
         }
 
         return $this->request($function, $parameters, $parameters['method'] ?? null);
+
     }
 
     /**
