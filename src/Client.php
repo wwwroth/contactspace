@@ -43,7 +43,7 @@ class Client
      * @return mixed
      * @throws \Exception
      */
-    public function __call(string $function, array $parameters, string $method = 'get')
+    public function __call(string $function, array $parameters)
     {
         $this->config = (array) require(
             __DIR__ . '/config/contactspace.php'
@@ -55,7 +55,7 @@ class Client
             throw new \Exception($function . ' is not a valid API function.');
         }
 
-        return $this->request($function, $parameters, $method);
+        return $this->request($function, $parameters, $parameters['method'] ?? null);
     }
 
     /**
