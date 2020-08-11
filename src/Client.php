@@ -39,10 +39,11 @@ class Client
     /**
      * @param string $function
      * @param array $parameters
-     * @return string
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $method
+     * @return mixed
+     * @throws \Exception
      */
-    public function __call(string $function, array $parameters)
+    public function __call(string $function, array $parameters, string $method = 'get')
     {
         $this->config = (array) require(
             __DIR__ . '/config/contactspace.php'
@@ -54,19 +55,23 @@ class Client
             throw new \Exception($function . ' is not a valid API function.');
         }
 
-        return $this->request($function, $parameters);
+        return $this->request($function, $parameters, $method);
     }
 
     /**
-     * @param $method
+     * @param $function
      * @param $args
-     * @return string
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param $method
+     * @return mixed
      */
-    private function request($method, $args)
+    private function request($function, $args, $method)
     {
-        $request = $this->http->get(self::API_BASE_URL, [
-            'query' => $this->buildQuery($method, $args[0] ?? null)
+        if (!in_array($method, ['post, get, put, patch, delete'])) {
+            throw new Exception($method . ' is not a valid HTTP API method.');
+        }
+
+        $request = $this->http->{$method}(self::API_BASE_URL, [
+            'query' => $this->buildQuery($function, $args[0] ?? null)
         ]);
 
         return json_decode($request->getBody()->getContents());
