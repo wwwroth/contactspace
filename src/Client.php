@@ -6,7 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
-    const API_BASE_URL = 'https://api.contactspace.com/';
+    const API_BASE_URL = 'https://apiv2.makecontact.space/';
 
     /**
      * @var GuzzleClient
