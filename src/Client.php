@@ -55,7 +55,8 @@ class Client
             throw new \Exception($function . ' is not a valid API function.');
         }
 
-        return $this->request($function, $parameters, $method);
+        return $this->request($function, $parameters, $parameters['method'] ?? null);
+
     }
 
     /**
